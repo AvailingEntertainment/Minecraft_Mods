@@ -2,12 +2,13 @@
   * Copyright © 2012 AvailingEntertainment
   * 
   * File: mod_placeHolder.java
-  * Version: 1.7 (0170)
+  * Version: 1.7 (0177)
   * Developed and Maintained by AvailingEntertainment
   */
 package net.minecraft.src;
 
 public class mod_placeHolder extends BaseMod {
+	public static final String Version = "1.7 (0177)";
 	public static final Block Platinum = new BlockCustom(165, 0).setBlockName("Platinum").setHardness(4F).setResistance(12.5F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Ore
 	public static final Block Bisimuth = new BlockCustom(166, 0).setBlockName("Bisimuth").setHardness(2.5F).setResistance(10F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Item
 	public static final Block Vranium = new BlockCustom(167, 0).setBlockName("Vranium").setHardness(2.0F).setResistance(2.0F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Ore
@@ -34,7 +35,6 @@ public class mod_placeHolder extends BaseMod {
 		ModLoader.registerBlock(Cobalt);
 		ModLoader.registerBlock(Chromium);
 		ModLoader.registerBlock(Thallium);
-			
 			/*-- OreBlock Register --*/
 		ModLoader.registerBlock(PlatinumBlock);
 		ModLoader.registerBlock(BisimuthBlock);
@@ -42,7 +42,6 @@ public class mod_placeHolder extends BaseMod {
 		ModLoader.registerBlock(CobaltBlock);
 		ModLoader.registerBlock(ChromiumBlock);
 		ModLoader.registerBlock(ThalliumBlock);
-		
 			/*-- Ore Name --*/
 		ModLoader.addName(Platinum, "Platinum");
 		ModLoader.addName(Bisimuth, "Bisimuth");
@@ -50,7 +49,6 @@ public class mod_placeHolder extends BaseMod {
 		ModLoader.addName(Cobalt, "Cobalt");
 		ModLoader.addName(Chromium, "Chromium");
 		ModLoader.addName(Thallium, "Thallium");
-		
 			/*-- OreBlock Name --*/
 		ModLoader.addName(PlatinumBlock, "Platinum Block");
 		ModLoader.addName(BisimuthBlock, "Bisimuth Block");
@@ -58,7 +56,10 @@ public class mod_placeHolder extends BaseMod {
 		ModLoader.addName(CobaltBlock, "Cobalt Block");
 		ModLoader.addName(ChromiumBlock, "Chromium Block");
 		ModLoader.addName(ThalliumBlock, "Thallium Block");
-		
+			/*-- Item Name --*/
+		ModLoader.addName(BisimuthItem, "Bisimuth");
+		ModLoader.addName(CobaltItem, "Cobalt Shard"); 			// Change Name?
+		ModLoader.addName(ChromiumItem, "Chromium Fragment"); 	// Change Name?
 			/*-- Ore GFX --*/
 		Platinum.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/platinumore.png");
 		Bisimuth.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/bisimuthore.png");
@@ -66,7 +67,6 @@ public class mod_placeHolder extends BaseMod {
 		Cobalt.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/cobaltore.png");
 		Chromium.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/chromiumore.png");
 		Thallium.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/thalliumore.png");
-		
 			/*-- OreBlock GFX --*/
 		PlatinumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/platinumblock.png");
 		BisimuthBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/bisimuthblock.png");
@@ -74,20 +74,23 @@ public class mod_placeHolder extends BaseMod {
 		CobaltBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/cobaltblock.png");
 		ChromiumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/chromiumblock.png");
 		ThalliumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/thalliumblock.png");
-			
-			/*-- OreBlock Recipes --*/ // Place Holders
+			/*-- Item GFX --*/
+		BisimuthItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/gfx/items.png");
+		CobaltItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/gfx/items.png");
+		ChromiumItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/gfx/items.png");
+			/*-- OreBlock Recipes --*/
 		ModLoader.addRecipe(new ItemStack(PlatinumBlock, 1), new Object[] {
-			"###", "###", "###", Character.valueOf('#'), Block.???? });	
-		ModLoader.addRecipe(new ItemStack(BisimuthBlock, 1), new Object[] { //
+			"###", "###", "###", Character.valueOf('#'), Block.Platinum });	
+		ModLoader.addRecipe(new ItemStack(BisimuthBlock, 1), new Object[] {
 			"###", "###", "###", Character.valueOf('#'), Block.BisimuthItem });
 		ModLoader.addRecipe(new ItemStack(VraniumBlock, 1), new Object[] {
-			"###", "###", "###", Character.valueOf('#'), Block.dirt });	
-		ModLoader.addRecipe(new ItemStack(CobaltBlock, 1), new Object[] { //
+			"###", "###", "###", Character.valueOf('#'), Block.Vranium });	
+		ModLoader.addRecipe(new ItemStack(CobaltBlock, 1), new Object[] {
 			"###", "###", "###", Character.valueOf('#'), Block.CobaltItem });
-		ModLoader.addRecipe(new ItemStack(ChromiumBlock, 1), new Object[] { //
+		ModLoader.addRecipe(new ItemStack(ChromiumBlock, 1), new Object[] {
 			"###", "###", "###", Character.valueOf('#'), Block.ChromiumItem });	
 		ModLoader.addRecipe(new ItemStack(ThalliumBlock, 1), new Object[] {
-			"###", "###", "###", Character.valueOf('#'), Block.dirt });
+			"###", "###", "###", Character.valueOf('#'), Block.Thallium });
 	}	
 	
 	public void generateSurface(World world, Random random, int chunkX, int chunkZ) {
@@ -96,49 +99,35 @@ public class mod_placeHolder extends BaseMod {
 			int randPosY = random.nextInt(128);
 			int randPosZ = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(Platinum.blockID, 3)).generate(world, random, randPosX, randPosY, randPosZ);
-		}
-
-		for (int i = 0; i < 8; i++) {
+		} for (int i = 0; i < 8; i++) {
 			int randPosX = chunkX + random.nextInt(16);
 			int randPosY = random.nextInt(128);
 			int randPosZ = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(Bisimuth.blockID, 4)).generate(world, random, randPosX, randPosY, randPosZ);
-		}
-		
-		for (int i = 0; i < 7; i++) {
+		} for (int i = 0; i < 7; i++) {
 			int randPosX = chunkX + random.nextInt(16);
 			int randPosY = random.nextInt(128);
 			int randPosZ = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(Vranium.blockID, 4)).generate(world, random, randPosX, randPosY, randPosZ);
-		}
-		
-		for (int i = 0; i < 6; i++) {
+		} for (int i = 0; i < 6; i++) {
 			int randPosX = chunkX + random.nextInt(16);
 			int randPosY = random.nextInt(128);
 			int randPosZ = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(Cobalt.blockID, 6)).generate(world, random, randPosX, randPosY, randPosZ);
-		}
-		
-		for (int i = 0; i < 4; i++) {
+		} for (int i = 0; i < 4; i++) {
 			int randPosX = chunkX + random.nextInt(16);
 			int randPosY = random.nextInt(128);
 			int randPosZ = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(Chromium.blockID, 6)).generate(world, random, randPosX, randPosY, randPosZ);
-		}
-		
-		for (int i = 0; i < 3; i++) {
+		} for (int i = 0; i < 3; i++) {
 			int randPosX = chunkX + random.nextInt(16);
 			int randPosY = random.nextInt(128);
 			int randPosZ = chunkZ + random.nextInt(16);
 			(new WorldGenMinable(Thallium.blockID, 8)).generate(world, random, randPosX, randPosY, randPosZ);
 		}
 	}
+	
+	public String getVersion() {
+		return "placeHolder " + Version + " for Minecraft 1.3.2";
+	}
 }
-
-/*
-TODO:
-
-
-Just About Everything except blocks...
-
-*/

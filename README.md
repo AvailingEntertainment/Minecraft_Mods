@@ -1,5 +1,5 @@
 -==--- General Information ---==-
-Copyright (©) 2012 AvailingEntertainment
+Copyright (©) 2012 AvailingEntertainment <http://availing.x10.mx/>
 
 	All AvailingEntertainment creations are free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 	
@@ -9,16 +9,13 @@ Copyright (©) 2012 AvailingEntertainment
 	
 AvailingEntertainment creations are Minecraft© modifications written in Java. It is completely open source, and is privately supported. It is derived off of IOwnAPC/AvailingEntertainment/Google_Earth's knowledge of Java and is based on the code of that project with extensive changes over time to optimize, improve, and cleanup the codebase at the same time as improving the ingame mechanics and functionality. If you wish to contribute ideas or code please make pull requests to our github repo at https://github.com/AvailingEntertainment/Minecraft_Mods
 
-For further information on the AvailingEntertainment creations, please email me at availingentertainment@gmail.com.
+For further information on the AvailingEntertainment creations, please email me at availingentertainment@gmail.com or visit the community site at http://availing.x10.mx/.
 
 Documentation including installation instructions can be found inside the doc directory.
 
-
-
-
-
-
--==--- TERMS AND CONDITIONS ---==-
+----------------------------------
+------ TERMS AND CONDITIONS ------
+----------------------------------
 0. USED TERMS
 MOD - modification, plugin, a piece of software that interfaces with the Minecraft client to extend, add, change or remove original capabilities.
 MOJANG - Mojang AB

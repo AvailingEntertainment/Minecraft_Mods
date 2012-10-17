@@ -12,4 +12,13 @@ When the mod is complete I want to have the following completed:
 	more food and generating structures.
 	
 Currently Completed
-	6 new ores (no gfx)
+	Platinum Ore + Generation + Block
+	Bisimuth Ore + Generation + Block + Dropped Item
+	Vranium Ore + Generation + Block
+	Cobalt Ore + Generation + Block + Dropped Item
+	Chromium Ore + Generation + Block + Dropped Item
+	Thallium Ore + Generation + Block
+	
+TODO:
+	CustomBlock.class and CustomItem.class
+	Tools, All Mobs, etc (TBA).
