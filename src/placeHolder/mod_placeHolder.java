@@ -17,7 +17,7 @@ public class mod_placeHolder extends BaseMod {
 	public static final Block Thallium = new BlockCustom(170, 0).setBlockName("Thallium").setHardness(1.0F).setResistance(2.0F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Ore
 	
 	public static final Block PlatinumBlock = new BlockCustom(171, 0).setBlockName("PlatinumBlock").setHardness(4.5F).setResistance(15F).setCreativeTab(CreativeTabs.tabBlock);
-	public static final Block BisimithBlock = new BlockCustom(172, 0).setBlockName("BisimuthBlock").setHardness(3.0F).setResistance(12.5F).setCreativeTab(CreativeTabs.tabBlock);
+	public static final Block BisimuthBlock = new BlockCustom(172, 0).setBlockName("BisimuthBlock").setHardness(3.0F).setResistance(12.5F).setCreativeTab(CreativeTabs.tabBlock);
 	public static final Block VraniumBlock = new BlockCustom(173, 0).setBlockName("VraniumBlock").setHardness(3.0F).setResistance(4.0F).setCreativeTab(CreativeTabs.tabBlock);
 	public static final Block CobaltBlock = new BlockCustom(174, 0).setBlockName("CobaltBlock").setHardness(2.0F).setResistance(10F).setCreativeTab(CreativeTabs.tabBlock);
 	public static final Block ChromiumBlock = new BlockCustom(175, 0).setBlockName("ChromiumBlock").setHardness(2.0F).setResistance(3.0F).setCreativeTab(CreativeTabs.tabBlock);
@@ -26,6 +26,11 @@ public class mod_placeHolder extends BaseMod {
 	public static final Item BisimuthItem = new ItemCustom(1700).setItemName("BisimuthItem");
 	public static final Item CobaltItem = new ItemCustom(1701).setItemName("CobaltItem");
 	public static final Item ChromiumItem = new ItemCustom(1702).setItemName("ChromiumItem");
+	
+	public static final Achievement getPlatinum = new Achievement(1750, "getPlatinum", pos_x, pos_y, Item.Platinum, null).registerAchievement();
+	public static final Achievement getBisimuth = new Achievement(1751, "getBisimuth", pos_x, pos_y, Block.Bisimuth, null).registerAchievement();
+	public static final Achievement getVranium = new Achievement(1752, "getVranium", pos_x, pos_y, Block.Vranium, null).registerAchievement();
+	public static final Achievement outGrowingNormal = new Achievement(1753, "outGrowingNormal", pos_x, pos_y, /*PLACEHOLDER*/, null).registerAchievement();
 	
 	public void load() {
 			/*-- Ore Register --*/
@@ -91,7 +96,24 @@ public class mod_placeHolder extends BaseMod {
 			"###", "###", "###", Character.valueOf('#'), Block.ChromiumItem });	
 		ModLoader.addRecipe(new ItemStack(ThalliumBlock, 1), new Object[] {
 			"###", "###", "###", Character.valueOf('#'), Block.Thallium });
-	}	
+			
+		ModLoader.addAchievementDesc(getPlatinum, "Getting Platinum", "Find and mine a Platinum Ore!");
+		ModLoader.addAchievementDesc(getBisimuth, "Getting Bisimuth", "Find and mine a Bisimuth Ore!");
+		ModLoader.addAchievementDesc(getVranium, "Getting Vranium", "Find and mine a Vranium Ore!");
+		ModLoader.addAchievementDesc(outgrowingNormal, "Outgrowing Normal!", "Create a set of Platinum, Bisimuth, and Vranium tools.");
+	}
+	
+	public void takenFromCrafting(EntityPlayer ep, ItemStack is, IInventory ii) {
+		if (ii.itemID == Item.Platinum.shiftedIndex) {
+			ep.addStat(getPlatinum, 1);
+		} if (ii.itemID == Block.Bisimuth.blockID) {
+			ep.addStat(getBisimuth, 1);
+		} if (ii.itemID == Block.Vranium.blockID) {
+			ep.addStat(getVranium, 1);
+		}
+		
+		/** For the Outgrowing Normal achievement use void inventoryHasItem or something like that and check if player has all the required items.  **/
+	}
 	
 	public void generateSurface(World world, Random random, int chunkX, int chunkZ) {
 		for (int i = 0; i < 10; i++) {
