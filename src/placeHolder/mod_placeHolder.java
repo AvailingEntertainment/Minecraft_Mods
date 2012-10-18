@@ -27,10 +27,10 @@ public class mod_placeHolder extends BaseMod {
 	public static final Item CobaltItem = new ItemCustom(1701).setItemName("CobaltItem");
 	public static final Item ChromiumItem = new ItemCustom(1702).setItemName("ChromiumItem");
 	
-	public static final Achievement getPlatinum = new Achievement(1750, "getPlatinum", pos_x, pos_y, Item.Platinum, null).registerAchievement();
-	public static final Achievement getBisimuth = new Achievement(1751, "getBisimuth", pos_x, pos_y, Block.Bisimuth, null).registerAchievement();
+	public static final Achievement getPlatinum = new Achievement(1750, "getPlatinum", pos_x, pos_y, Item.Platinum, getBisimuth).registerAchievement();
+	public static final Achievement getBisimuth = new Achievement(1751, "getBisimuth", pos_x, pos_y, Block.Bisimuth, getVranium).registerAchievement();
 	public static final Achievement getVranium = new Achievement(1752, "getVranium", pos_x, pos_y, Block.Vranium, null).registerAchievement();
-	public static final Achievement outGrowingNormal = new Achievement(1753, "outGrowingNormal", pos_x, pos_y, /*PLACEHOLDER*/, null).registerAchievement();
+	public static final Achievement outGrowingNormal = new Achievement(1753, "outGrowingNormal", pos_x, pos_y, ???, getPlatinum).setSpecial().registerAchievement();
 	
 	public void load() {
 			/*-- Ore Register --*/
