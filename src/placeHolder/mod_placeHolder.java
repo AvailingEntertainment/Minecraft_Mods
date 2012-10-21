@@ -32,6 +32,31 @@ public class mod_placeHolder extends BaseMod {
 	public static final Achievement getVranium = new Achievement(1752, "getVranium", pos_x, pos_y, Block.Vranium, null).registerAchievement();
 	public static final Achievement outGrowingNormal = new Achievement(1753, "outGrowingNormal", pos_x, pos_y, ???, getPlatinum).setSpecial().registerAchievement();
 	
+	// Pickaxes
+	public static final Item PlatinumPickaxe = new ItemCustomPickaxe(####, EnumToolMaterialCustom.PLATINUM).setItemName("Platinum Pickaxe");
+	public static final Item BisimuthPickaxe = new ItemCustomPickaxe(####, EnumToolMaterialCustom.BISIMUTH).setItemName("Bisimuth Pickaxe");
+	public static final Item CobaltPickaxe = new ItemCustomPickaxe(####, EnumToolMaterialCustom.COBALT).setItemName("Cobalt Pickaxe");
+	public static final Item ChromiumPickaxe = new ItemCustomPickaxe(####, EnumToolMaterialCustom.CHROMIUM).setItemName("Chromium Pickaxe");
+		
+	// Axes
+	public static final Item PlatinumAxe = new ItemCustomAxe(####, EnumToolMaterialCustom.PLATINUM).setItemName("Platinum Axe");
+	public static final Item BisimuthAxe = new ItemCustomAxe(####, EnumToolMaterialCustom.BISIMUTH).setItemName("Bisimuth Axe");
+	public static final Item VraniumAxe = new ItemCustomAxe(####, EnumToolMaterialCustom.VRANIUM).setItemName("Vranium Axe");
+	public static final Item ChromiumAxe = new ItemCustomAxe(####, EnumToolMaterialCustom.CHROMIUM).setItemName("Chromium Axe");
+	
+	// Shovels
+	public static final Item BisimuthSpade = new ItemCustomSpade(####, EnumToolMaterial.BISIMUTH).setItemName("Bisimuth Axe");
+	public static final Item VraniumSpade = new ItemCustomSpade(####, EnumToolMaterial.VRANIUM).setItemName("Vranium Axe");
+	public static final Item ThalliumSpade = new ItemCustomSpade(####, EnumToolMaterial.THALLIUM).setItemName("Thallium Axe");
+	
+	// Swords
+	public static final Item PlatinumSword
+	public static final Item BisimuthSword
+	public static final Item VraniumSword = new Item
+	public static final Item CobaltSword
+	
+	// Hoes
+	
 	public void load() {
 			/*-- Ore Register --*/
 		ModLoader.registerBlock(Platinum);
@@ -153,3 +178,29 @@ public class mod_placeHolder extends BaseMod {
 		return "placeHolder " + Version + " for Minecraft 1.3.2";
 	}
 }
+
+/*
+	Thallium
+		Tools (Stone +* 0.5): Spade, Hoe
+		Armor (Stone +* 0.5): Boots (Slight running speed increase)
+		
+	Chromium:
+		Tools (Iron * 0.8): Pickaxe, Axe, Hoe
+		Armor (Iron * 0.8): Chest, Legs
+	
+	Cobalt:
+		Tools (Iron +* 0.3): Pickaxe, Sword, Hoe
+		Armor (Iron +* 0.1): Helm, Chest, Boots
+		
+	Vranium:
+		Tools (Diamond * 0.5): Axe, Spade, Sword
+		Armor (Diamond * 0.75): Helm, Legs, Boots
+		
+	Bisimuth:
+		Tools (Diamond +* 0.075): Pickaxe, Axe, Spade, Sword, Hoe
+		Armor (Diamond +* 0.35): Helm
+		
+	Platinum:
+		Tools (Diamond +* 0.45): Pickaxe, Axe, Sword
+		Armor (Diamond * 0.85): Helm, Chest, Legs, Boots
+*/
