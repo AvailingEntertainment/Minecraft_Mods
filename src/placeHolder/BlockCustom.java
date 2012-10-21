@@ -1,20 +1,17 @@
-/**
-  * Copyright © 2012 AvailingEntertainment
-  * 
-  * File: BlockCustom.java
-  * Version: 1.0 (100)
-  * Developed and Maintained by AvailingEntertainment
-  */
 package net.minecraft.src;
 
 import java.util.Random;
 
 public class BlockCustom extends Block {
-	public BlockCustom(int i, int j) {
-		super(i, j, Material.ground);
+	BlockCustom(int i, int j) {
+		super(i, j, Material.rock);
+		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 	
-	public int quantityDropped(Random random) {
-		return 1;
-	}
+	/**
+	 * Get drop ID
+	 * **/
+	public int idDropped(int par1, Random par2Random, int par3) {
+		return this.blockID == mod_placeHolder.Bisimuth.blockID ? mod_placeHolder.BisimuthItem.shiftedIndex : (this.blockID == mod_placeHolder.Cobalt.blockID ? mod_placeHolder.CobaltItem.shiftedIndex : (this.blockID == mod_placeHolder.Chromium.blockID ? mod_placeHolder.ChromiumItem.shiftedIndex : this.blockID));
+    }
 }

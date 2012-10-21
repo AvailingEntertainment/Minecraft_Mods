@@ -21,7 +21,10 @@ Currently Completed
 	"Get Platinum" Achievement
 	"Get Bisimuth" Achievement
 	"Get Vranium" Achievement
+	CustomBlock.class
+	ItemCustomTool.class
+	ItemCustomPickaxe.class
+	EnumToolMaterialCustom.class
 	
 TODO:
-	CustomBlock.class and CustomItem.class
 	Tools, All Mobs, etc (TBA).
