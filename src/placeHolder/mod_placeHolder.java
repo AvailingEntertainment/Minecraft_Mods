@@ -2,7 +2,7 @@
   * Copyright © 2012 AvailingEntertainment
   * 
   * File: mod_placeHolder.java
-  * Version: 0.2.3 (0237)
+  * Version: 0.3.6 (0363)
   * Developed and Maintained by AvailingEntertainment
   */
 package net.minecraft.src;
@@ -10,7 +10,7 @@ package net.minecraft.src;
 import java.util.Random;
 
 public class mod_placeHolder extends BaseMod {
-	public static final String Version = "0.2.3 (0237)";
+	public static final String Version = "0.3.6 (0363)";
 	public static final Block Platinum = new Block(165, 0, Material.rock).setBlockName("Platinum").setHardness(7F).setResistance(12.5F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Ore
 	public static final Block Bisimuth = new BlockCustom(166, 0).setBlockName("Bisimuth").setHardness(5.5F).setResistance(10F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Item
 	public static final Block Vranium = new Block(167, 0, Material.rock).setBlockName("Vranium").setHardness(4.8F).setResistance(2.0F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Ore
@@ -45,18 +45,18 @@ public class mod_placeHolder extends BaseMod {
 	public static final Item VraniumAxe = new ItemCustomAxe(1712, EnumToolMaterialCustom.VRANIUM).setItemName("Vranium Axe").setCreativeTab(CreativeTabs.tabTools);
 	public static final Item ChromiumAxe = new ItemCustomAxe(1713, EnumToolMaterialCustom.CHROMIUM).setItemName("Chromium Axe").setCreativeTab(CreativeTabs.tabTools);
 	
-	public static final Item BisimuthSpade = new ItemCustomSpade(1714, EnumToolMaterial.BISIMUTH).setItemName("Bisimuth Axe").setCreativeTab(CreativeTabs.tabTools);
-	public static final Item VraniumSpade = new ItemCustomSpade(1715, EnumToolMaterial.VRANIUM).setItemName("Vranium Axe").setCreativeTab(CreativeTabs.tabTools);
-	public static final Item ThalliumSpade = new ItemCustomSpade(1716, EnumToolMaterial.THALLIUM).setItemName("Thallium Axe").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item BisimuthSpade = new ItemCustomSpade(1714, EnumToolMaterialCustom.BISIMUTH).setItemName("Bisimuth Axe").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item VraniumSpade = new ItemCustomSpade(1715, EnumToolMaterialCustom.VRANIUM).setItemName("Vranium Axe").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item ThalliumSpade = new ItemCustomSpade(1716, EnumToolMaterialCustom.THALLIUM).setItemName("Thallium Axe").setCreativeTab(CreativeTabs.tabTools);
 	
-	public static final Item PlatinumSword = new ItemCustomSword(1717, EnumToolMaterial.PLATINUM).setItemName("Platinum Sword").setCreativeTab(CreativeTabs.tabTools);
-	public static final Item BisimuthSword = new ItemCustomSword(1718, EnumToolMaterial.BISIMUTH).setItemName("Bisimuth Sword").setCreativeTab(CreativeTabs.tabTools);
-	public static final Item VraniumSword = new ItemCustomSword(1719, EnumToolMaterial.VRANIUM).setItemName("Vranium Sword").setCreativeTab(CreativeTabs.tabTools);
-	public static final Item CobaltSword = new ItemCustomSword(1720, EnumToolMaterial.COBALT).setItemName("Cobalt Sword").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item PlatinumSword = new ItemCustomSword(1717, EnumToolMaterialCustom.PLATINUM).setItemName("Platinum Sword").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item BisimuthSword = new ItemCustomSword(1718, EnumToolMaterialCustom.BISIMUTH).setItemName("Bisimuth Sword").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item VraniumSword = new ItemCustomSword(1719, EnumToolMaterialCustom.VRANIUM).setItemName("Vranium Sword").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item CobaltSword = new ItemCustomSword(1720, EnumToolMaterialCustom.COBALT).setItemName("Cobalt Sword").setCreativeTab(CreativeTabs.tabTools);
 	
-	public static final Item BisimuthHoe = new ItemCustomHoe(1721, EnumToolMaterial.BISIMUTH).setItemName("Bisimuth Hoe").setCreativeTab(CreativeTabs.tabTools);
-	public static final Item ChromiumHoe = new ItemCustomHoe(1722, EnumToolMaterial.CHROMIUM).setItemName("Chromium Hoe").setCreativeTab(CreativeTabs.tabTools);
-	public static final Item ThalliumHoe = new ItemCustomHoe(1723, EnumToolMaterial.THALLIUM).setItemName("Thallium Hoe").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item BisimuthHoe = new ItemCustomHoe(1721, EnumToolMaterialCustom.BISIMUTH).setItemName("Bisimuth Hoe").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item ChromiumHoe = new ItemCustomHoe(1722, EnumToolMaterialCustom.CHROMIUM).setItemName("Chromium Hoe").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item ThalliumHoe = new ItemCustomHoe(1723, EnumToolMaterialCustom.THALLIUM).setItemName("Thallium Hoe").setCreativeTab(CreativeTabs.tabTools);
 	
 	public void load() {
 			/*-- Ore Register --*/
@@ -93,7 +93,7 @@ public class mod_placeHolder extends BaseMod {
 		ModLoader.addName(ChromiumItem, "Chromium Fragment"); 	// Change Name?
 		
 		ModLoader.addName(PlatinumPickaxe, "Platinum Pickaxe");
-		ModLoader.addName(BisimuthPickaxe, "");
+		ModLoader.addName(BisimuthPickaxe, "Bisimuth Pickaxe");
 		ModLoader.addName(CobaltPickaxe, "");
 		ModLoader.addName(ChromiumPickaxe, "Chromium Pickaxe");
 		
@@ -187,27 +187,21 @@ public class mod_placeHolder extends BaseMod {
 }
 
 /*
-	Thallium
-		Tools (Stone +* 0.5): Spade, Hoe
+	Thallium:
 		Armor (Stone +* 0.5): Boots (Slight running speed increase)
 		
 	Chromium:
-		Tools (Iron +* 0.1): Pickaxe, Axe, Hoe
 		Armor (Iron +* 0.1): Chest, Legs
 	
 	Cobalt:
-		Tools (Iron +* 0.3): Pickaxe, Sword
 		Armor (Iron +* 0.15): Helm, Chest, Boots
 		
 	Vranium:
-		Tools (Diamond * 0.5): Axe, Spade, Sword
 		Armor (Diamond * 0.75): Helm, Legs, Boots
 		
 	Bisimuth:
-		Tools (Diamond +* 0.075): Pickaxe, Axe, Spade, Sword, Hoe
 		Armor (Diamond +* 0.35): Helm
 		
 	Platinum:
-		Tools (Diamond +* 0.45): Pickaxe, Axe, Sword
 		Armor (Diamond * 0.85): Helm, Chest, Legs, Boots
 */
