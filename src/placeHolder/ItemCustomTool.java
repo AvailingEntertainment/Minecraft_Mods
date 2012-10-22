@@ -1,25 +1,23 @@
 package net.minecraft.src;
 
-import java.lang.reflect.Array;
-
 public class ItemCustomTool extends Item {
     private Block[] blocksEffectiveAgainst;
     protected float efficiencyOnProperMaterial = 4.0F;
     private int damageVsEntity;
-    protected EnumToolMaterial toolMaterial;
+    protected EnumToolMaterialCustom toolMaterial;
 
-    protected ItemCustomTool(int i, int j, EnumToolMaterial etm, Block[] block) {
+    protected ItemCustomTool(int i, int j, EnumToolMaterialCustom etmc, Block[] block) {
         super(i);
-        this.toolMaterial = etm;
+        this.toolMaterial = etmc;
         this.blocksEffectiveAgainst = block;
         this.maxStackSize = 1;
-        this.setMaxDamage(etm.getMaxUses());
-        this.efficiencyOnProperMaterial = etm.getEfficiencyOnProperMaterial();
-        this.damageVsEntity = j + etm.getDamageVsEntity();
+        this.setMaxDamage(etmc.getMaxUses());
+        this.efficiencyOnProperMaterial = etmc.getEfficiencyOnProperMaterial();
+        this.damageVsEntity = j + etmc.getDamageVsEntity();
         this.setCreativeTab(CreativeTabs.tabTools);
     }
 
-    public float getStrVsBlock(ItemStack is, Block block) {
+	public float getStrVsBlock(ItemStack is, Block block) {
         Block[] i= this.blocksEffectiveAgainst;
         int j = i.length;
 
