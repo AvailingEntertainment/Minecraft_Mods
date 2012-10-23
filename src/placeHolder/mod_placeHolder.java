@@ -2,7 +2,7 @@
   * Copyright © 2012 AvailingEntertainment
   * 
   * File: mod_placeHolder.java
-  * Version: 0.3.6 (0363)
+  * Version: 0.3.7 (0370)
   * Developed and Maintained by AvailingEntertainment
   */
 package net.minecraft.src;
@@ -10,7 +10,7 @@ package net.minecraft.src;
 import java.util.Random;
 
 public class mod_placeHolder extends BaseMod {
-	public static final String Version = "0.3.6 (0363)";
+	public static final String Version = "0.3.7 (0370)";
 	public static final Block Platinum = new Block(165, 0, Material.rock).setBlockName("Platinum").setHardness(7F).setResistance(12.5F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Ore
 	public static final Block Bisimuth = new BlockCustom(166, 0).setBlockName("Bisimuth").setHardness(5.5F).setResistance(10F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Item
 	public static final Block Vranium = new Block(167, 0, Material.rock).setBlockName("Vranium").setHardness(4.8F).setResistance(2.0F).setCreativeTab(CreativeTabs.tabBlock);	// Drops Ore
@@ -89,14 +89,31 @@ public class mod_placeHolder extends BaseMod {
 		ModLoader.addName(ThalliumBlock, "Thallium Block");
 			/*-- Item Name --*/
 		ModLoader.addName(BisimuthItem, "Bisimuth");
-		ModLoader.addName(CobaltItem, "Cobalt Shard"); 			// Change Name?
-		ModLoader.addName(ChromiumItem, "Chromium Fragment"); 	// Change Name?
-		
+		ModLoader.addName(CobaltItem, "Cobalt Shard");
+		ModLoader.addName(ChromiumItem, "Chromium Fragment");
+			/*-- Pickaxe Names --*/
 		ModLoader.addName(PlatinumPickaxe, "Platinum Pickaxe");
 		ModLoader.addName(BisimuthPickaxe, "Bisimuth Pickaxe");
-		ModLoader.addName(CobaltPickaxe, "");
+		ModLoader.addName(CobaltPickaxe, "Cobalt Pickaxe");
 		ModLoader.addName(ChromiumPickaxe, "Chromium Pickaxe");
-		
+			/*-- Axe Names --*/
+		ModLoader.addName(PlatinumAxe, "Platinum Axe");
+		ModLoader.addName(BisimuthAxe, "Bisimuth Axe");
+		ModLoader.addName(VraniumAxe, "Vranium Axe");
+		ModLoader.addName(ChromiumAxe, "Chromium Axe");
+			/*-- Spade Names--*/
+		ModLoader.addName(BisimuthSpade, "Bisimuth Spade");
+		ModLoader.addName(VraniumSpade, "Vranium Shovel");
+		ModLoader.addName(ThalliumSpade, "Thallium Spade");
+			/*-- Sword Names --*/
+		ModLoader.addName(PlatinumSword, "Platinum Sword");
+		ModLoader.addName(BisimuthSword, "Bisimuth Sword");
+		ModLoader.addName(VraniumSword, "Vranium Sword");
+		ModLoader.addName(CobaltSword, "Chromium Sword");
+			/*-- Hoe Names --*/
+		ModLoader.addName(BisimuthHoe, "Bisimuth Hoe");
+		ModLoader.addName(ChromiumHoe, "Chromium Hoe");
+		ModLoader.addName(ThalliumHoe, "Thallium Hoe");
 			/*-- Ore GFX --*/
 		Platinum.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/platinumore.png");
 		Bisimuth.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/bisimuthore.png");
