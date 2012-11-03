@@ -12,7 +12,9 @@ public class mod_placeHolder extends BaseMod {
 	
 	public static final Item Knife = new ItemKnife(1700, EnumToolMaterialApoc.IRON).setItemName("Knife").setCreativeTab(CreativeTabs.tabTools);
 	public static final Item WoodBat = new ItemBat(1701, EnumToolMaterialApoc.WOOD).setItemName("Wooden Bat").setCreativeTab(CreativeTabs.tabTools);
-	public static final ITem IronBat = new ItemBat(1702, EnumToolMaterialApoc.IRON).setItemName("Metal Bat").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item IronBat = new ItemBat(1702, EnumToolMaterialApoc.IRON).setItemName("Metal Bat").setCreativeTab(CreativeTabs.tabTools);
+	public static final Item ThrowingKnife = new ItemThrowingKnife(1703, EnumToolMaterialApc.IRON).setItemName("Throwing Knife").setCreativeTab(CreativeTabs.tabTools);
+	
 	public static final Item Bandage = new ItemBandage(1707).setItemName("Bandage");
 	
 	public void load() {			
