@@ -115,23 +115,23 @@ public class mod_placeHolder extends BaseMod {
 		ModLoader.addName(ChromiumHoe, "Chromium Hoe");
 		ModLoader.addName(ThalliumHoe, "Thallium Hoe");
 			/*-- Ore GFX --*/
-		Platinum.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/platinumore.png");
-		Bisimuth.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/bisimuthore.png");
-		Vranium.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/vraniumore.png");
-		Cobalt.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/cobaltore.png");
-		Chromium.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/chromiumore.png");
-		Thallium.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/thalliumore.png");
+		Platinum.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/platinumore.png");
+		Bisimuth.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/bisimuthore.png");
+		Vranium.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/vraniumore.png");
+		Cobalt.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/cobaltore.png");
+		Chromium.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/chromiumore.png");
+		Thallium.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/thalliumore.png");
 			/*-- OreBlock GFX --*/
-		PlatinumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/platinumblock.png");
-		BisimuthBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/bisimuthblock.png");
-		VraniumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/vraniumblock.png");
-		CobaltBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/cobaltblock.png");
-		ChromiumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/chromiumblock.png");
-		ThalliumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/gfx/blocks/thalliumblock.png");
+		PlatinumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/platinumblock.png");
+		BisimuthBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/bisimuthblock.png");
+		VraniumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/vraniumblock.png");
+		CobaltBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/cobaltblock.png");
+		ChromiumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/chromiumblock.png");
+		ThalliumBlock.blockIndexInTexture = ModLoader.addOverride("/terrain.png", "/img/blocks/thalliumblock.png");
 			/*-- Item GFX --*/
-		BisimuthItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/gfx/items.png");
-		CobaltItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/gfx/items.png");
-		ChromiumItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/gfx/items.png");
+		BisimuthItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/img/items.png");
+		CobaltItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/img/items.png");
+		ChromiumItem.iconIndex = ModLoader.addOverride("/gui/items.png", "/img/items.png");
 			/*-- OreBlock Recipes --*/
 		ModLoader.addRecipe(new ItemStack(PlatinumBlock, 1), new Object[] {
 			"###", "###", "###", Character.valueOf('#'), Platinum });	
