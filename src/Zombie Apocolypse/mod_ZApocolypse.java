@@ -27,13 +27,6 @@ public class mod_placeHolder extends BaseMod {
 		
 		ModLoader.addAchievementDesc(getPlatinum, "Getting Platinum", "Make a Platinum Block!");
 		ModLoader.addAchievementDesc(getBisimuth, "Getting Bisimuth", "Make a Bisimuth Block!");
-		
-		ModLoader.addRecipe(new ItemStack(Knife, 1), new Object[] {
-			" # ", " # ", " # ", Character.valueOf('#'), Item.stick });
-		ModLoader.addRecipe(new ItemStack(WoodBat, 1), new Object[] {
-			" # ", " # ", " # ", Character.valueOf('#'), Item.stick });
-		ModLoader.addRecipe(new ItemStack(IronBat, 1), new Object[] {
-			" % ", " % ", " # ", Character.valueOf('%'), Item.ironingot, Character.valueOf('#'), Item.stick });
 	}
 	
 	public String getVersion() {
