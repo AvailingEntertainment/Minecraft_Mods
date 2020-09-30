@@ -1,4 +1,5 @@
 # Auto detect text files and perform LF normalization
+# Initialising the variables and assigning them
 * text=auto
 
 # Custom for Visual Studio
